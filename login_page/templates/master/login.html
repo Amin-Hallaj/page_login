@@ -21,11 +21,12 @@
 		<input type="checkbox" id="chk" aria-hidden="true">
 
 			<div class="signup">
-				<form>
+				<form action="{% url 'member_registration_submit' %}" method="post">
+					{% csrf_token %}
 					<label for="chk" aria-hidden="true">Sign up</label>
-					<input type="text" name="txt" placeholder="Enter your national code." required="">
-					<input type="text" name="txt" placeholder="Enter your first and last name." required="">
-					<input type="password" name="pswd" placeholder="Create a password." required="">
+					<input type="text" id="national_code" name="national_code" placeholder="Enter your national code." required="">
+					<input type="text" id="first_name_last_name" name="first_name_last_name" placeholder="Enter your first and last name." required="">
+					<input type="password" id="password_new" name="password_new" placeholder="Create a password." required="">
 					<button>Sign up</button>
 				</form>
 			</div>
