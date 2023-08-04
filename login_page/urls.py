@@ -10,6 +10,8 @@ urlpatterns = [
     path('operator/login/', views.operator_login, name='operator_login'),
     path('operator/login/submit/', views.operator_login_submit, name='operator_login_submit'),
     path('operator/logout/', views.operator_logout, name='operator_logout'),
+    path('operator/member/registration/', views.member_registration, name='member_registration'),
+    path('operator/member/registration/submit/', views.member_registration_submit, name='member_registration_submit'),
 
 ]
 
