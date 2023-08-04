@@ -85,17 +85,6 @@ def member_registration_submit(request):
         password_new=request.POST.get('password_new')
         user=User.objects.create_user(username=national_code , password=password_new)
 
-        if len(password_new) >= 8:
-
-            user= User.objects.get(username=request.user)
-            user.set_password(password_new)
-            user.save()
-            return redirect("operator_login")
-
-        messages.error(request, 'لطفا بیشتر از 8 کاراکتر باشد')
-        return redirect("operator_panel_pass_new")
-
-
     MemberRegistration.objects.create(
             user=user,
             national_code=national_code ,

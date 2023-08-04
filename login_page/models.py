@@ -11,4 +11,4 @@ class MemberRegistration(models.Model):
     first_name_last_name=models.CharField(max_length=200)
 
     def __str__(self):
-        return self.fullname
+        return self.first_name_last_name
