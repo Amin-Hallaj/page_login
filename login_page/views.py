@@ -55,11 +55,11 @@ def operator_login_submit(request):
 
         if user is not None:
             login(request , user)
-            messages.success(request, f"{request.user.user_members} خوش اومدین.")
+            messages.success(request, f"{request.user.user_members} welcome.")
             return redirect("operator_index")
 
         else:
-            messages.error(request,"نام کاربری یا رمز عبور نامعتبر است.")
+            messages.error(request,"Username or password is wrong.")
             return redirect("master_login")
         
     return redirect("operator_index" )
