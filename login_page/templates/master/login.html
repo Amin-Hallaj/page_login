@@ -46,18 +46,18 @@
 </html>
 <!-- partial -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
 {% if messages %}
 	<script>
 		toastr.options = {
-			timeOut: 2e3,
+			timeOut: 3e3,
 			progressBar: !0,
 			showMethod: "slideDown",
 			hideMethod: "slideUp",
 			showDuration: 200,
 			hideDuration: 200,
-			positionClass: "toast-bottom-left"
+			positionClass: "toast-top-center"
 		}
 		{% for message in messages %}
 		toastr.{{message.tags}}('{{message}}')
