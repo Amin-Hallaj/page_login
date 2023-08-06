@@ -30,11 +30,11 @@ def master_login_submit(request):
 
         if user is not None:
             login(request,user)
-            messages.success(request,f"{username} خوش اومدین.")
+            messages.success(request,f"{username} welcome.")
             return redirect('master_index')
 
         else:
-            messages.error(request,'نام کاربری یا رمز عبور اشتباه میباشد.')
+            messages.error(request,'Username or password is wrong.')
     
     return redirect("master_login")
 
