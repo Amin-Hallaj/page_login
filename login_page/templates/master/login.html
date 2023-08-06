@@ -2,10 +2,10 @@
 <!DOCTYPE html>
 <html lang="en" >
 <head>
-  <meta charset="UTF-8">
-  <title>Sign up / Login </title>
-  <link rel="stylesheet" href="{% static 'master/' %}style.css">
-  <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
+	<meta charset="UTF-8">
+	<title>Sign up / Login </title>
+	<link rel="stylesheet" href="{% static 'master/' %}style.css">
+	<link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
 
 </head>
 <body>
@@ -15,7 +15,7 @@
 <head>
 	<title>Slide Navbar</title>
 	<link rel="stylesheet" type="text/css" href="slide navbar style.css">
-	<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
 	<div class="main">  	
@@ -51,7 +51,12 @@
 {% if messages %}
 	<script>
 		toastr.options = {
-			
+			timeOut: 2e3,
+			progressBar: !0,
+			showMethod: "slideDown",
+			hideMethod: "slideUp",
+			showDuration: 200,
+			hideDuration: 200,
 			positionClass: "toast-bottom-left"
 		}
 		{% for message in messages %}
