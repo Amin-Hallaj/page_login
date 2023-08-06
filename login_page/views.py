@@ -10,6 +10,11 @@ def master_index(request):
     return render(request , 'master/index.html', {})
 
 
+def customer_index(request):
+
+    return render(request , 'customer/index.html', {})
+
+
 def master_login(request):
 
     return render(request , 'master/login.html', {})
