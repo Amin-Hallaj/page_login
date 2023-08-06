@@ -10,7 +10,7 @@ def master_index(request):
     return render(request , 'master/index.html', {})
 
 
-def customer_index(request):
+def operator_index(request):
 
     return render(request , 'customer/index.html', {})
 
@@ -45,11 +45,6 @@ def master_logout(request):
     return redirect("master_login")
 
 
-def operator_login(request ):
-            
-    return render(request , 'operator/login.html', {})
-
-
 def operator_login_submit(request):
 
     if request.method == "POST":
@@ -61,13 +56,13 @@ def operator_login_submit(request):
         if user is not None:
             login(request , user)
             messages.success(request, f"{request.user.user_members} خوش اومدین.")
-            return redirect("master_index")
+            return redirect("operator_index")
 
         else:
             messages.error(request,"نام کاربری یا رمز عبور نامعتبر است.")
-            return redirect("operator_login")
+            return redirect("master_login")
         
-    return redirect("operator_login" )
+    return redirect("operator_index" )
 
 
 def member_registration(request):
@@ -96,10 +91,4 @@ def member_registration_submit(request):
             first_name_last_name=first_name_last_name ,
             )
     
-    return redirect("member_registration")
-
-
-def operator_logout(request):
-
-    logout(request)
-    return redirect("master_login")
+    return redirect("operator_index")
