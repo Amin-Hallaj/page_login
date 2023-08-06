@@ -3,8 +3,9 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - Sign up / Login Form</title>
+  <title>Sign up / Login </title>
   <link rel="stylesheet" href="{% static 'master/' %}style.css">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
 
 </head>
 <body>
@@ -14,7 +15,7 @@
 <head>
 	<title>Slide Navbar</title>
 	<link rel="stylesheet" type="text/css" href="slide navbar style.css">
-<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
 	<div class="main">  	
@@ -44,6 +45,19 @@
 </body>
 </html>
 <!-- partial -->
-  
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+{% if messages %}
+	<script>
+		toastr.options = {
+			
+			positionClass: "toast-bottom-left"
+		}
+		{% for message in messages %}
+		toastr.{{message.tags}}('{{message}}')
+		{% endfor %}
+	</script>
+	{% endif %}
 </body>
 </html>
